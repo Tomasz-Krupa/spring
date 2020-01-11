@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd" >
+
+    <!--constructor based DI-->
+    <bean id="car0" class="org.example.task5.Car">
+    </bean>
+
+    <bean id="car1" class="org.example.task5.Car">
+        <constructor-arg ref="beanYear"/>
+        <constructor-arg ref="beanName"/>
+    </bean>
+    <bean id="beanYear" class="java.lang.Integer">
+        <constructor-arg type="java.lang.String" value="2016"/>
+    </bean>
+    <bean id="beanName" class="java.lang.String">
+        <constructor-arg  value="Trabant"/>
+    </bean>
+
+    <bean id="car2" class="org.example.task5.Car">
+    <constructor-arg type="int" value="1998"/>
+    <constructor-arg type="java.lang.String" value="Opel"/>
+</bean>
+
+    <bean id="car3" class="org.example.task5.Car">
+        <constructor-arg index="1" value="Audi"/>
+        <constructor-arg index="0" value="2000"/>
+    </bean>
+
+    <bean id="car4" class="org.example.task5.Car">
+        <constructor-arg name="year" value="2001"/>
+        <constructor-arg name="name" value="VW"/>
+    </bean>
+
+    <bean id="car5" class="org.example.task5.Car">
+        <constructor-arg name="year" value="2001"/>
+        <constructor-arg index="1" value="VW"/>
+<!--        możemy mieszać index i name-->
+    </bean>
+
+    <!--setter based DI-->
+    <bean id="size" class="java.lang.Integer">
+        <constructor-arg type="java.lang.String" value="456"></constructor-arg>
+    </bean>
+
+    <bean class="org.example.task5.Car" name="setterInjectedCar">
+        <property name="year" ref="beanYear"/>
+        <property name="name" ref="beanName"/>
+
+
+    </bean>
+
+
+</beans>
