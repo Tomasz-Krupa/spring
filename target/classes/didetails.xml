@@ -5,10 +5,16 @@
         xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd" >
 
-
+<!--zad7-->
     <bean id="name" class="java.lang.String">
         <constructor-arg value="Tomek"/>
+    </bean>
 
+<!--    zad8-->
+    <bean id="hello" class="org.example.didetails.DefaultHelloService">
+        <property name="name">
+            <ref bean="name"/>
+        </property>
     </bean>
 
 

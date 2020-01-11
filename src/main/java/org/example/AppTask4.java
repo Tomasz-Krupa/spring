@@ -19,7 +19,7 @@ public class AppTask4 {
         System.out.println(applicationContext.getBean("random", MyRandom.class).getValue()); //aliasowany
 
 
-        System.out.println(applicationContext.getBean("now")); //definiujemy w .xml met. wytwórczą, gdy klasa nie ma publicznego konstruktora bezparametrowego
+        System.out.println(applicationContext.getBean("now")); //definiujemy w .xml met. wytwórczą5, gdy klasa nie ma publicznego konstruktora bezparametrowego
         Thread.sleep(1000);
         System.out.println(applicationContext.getBean("now"));
         Thread.sleep(1000);

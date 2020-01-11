@@ -3,19 +3,22 @@
         xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd" >
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--Task3-->
-    <bean class="org.example.MyRandom"  name="myRandom1"/>
-    <bean class="java.time.LocalDateTime"  id="now" factory-method="now"/>
-<!--    mozemy wskazać metodę wytwórczą-->
+    <!--Task3-->
+    <bean class="org.example.MyRandom" name="myRandom1"/>
+    <bean class="java.time.LocalDateTime" id="now" factory-method="now"/>
+    <!--    mozemy wskazać metodę wytwórczą-->
 
-<!--Task4-->
+    <!--Task4-->
     <bean class="org.example.MyRandom" name="myRandom2"/>
     <bean class="org.example.MyRandom" name="myRandom3"/>
 
-<!--         stara nazwa        nowa nazwa-->
+    <!--         stara nazwa        nowa nazwa-->
     <alias name="myRandom3" alias="random"/>
+
+    <!--Task10-->
+    <bean class="org.example.MyRandom" name="myRandom4" scope="prototype"/>
 
 
 </beans>

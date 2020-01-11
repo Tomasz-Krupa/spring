@@ -9,6 +9,10 @@ public class Task7_8 {
         try (ClassPathXmlApplicationContext c = new ClassPathXmlApplicationContext("didetails.xml")) {
             String name = c.getBean(String.class, "name");
             System.out.println(name);
+            //task 8
+            String hello = c.getBean("hello", DefaultHelloService.class).hello(name);
+            System.out.println(hello);
+
         }
 
 
